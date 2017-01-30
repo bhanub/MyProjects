@@ -1,0 +1,11 @@
+---
+key_pair: 
+instance_size: 
+ami_id:  #Ubuntu 14.04
+sg_name: 
+subnet_id: 
+instance_name: 
+stack_name: 
+region: 
+access_key: 
+secreate_key: 
