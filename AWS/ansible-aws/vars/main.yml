@@ -2,10 +2,14 @@
 key_pair: 
 instance_size: 
 ami_id:  #Ubuntu 14.04
-sg_name: 
+sg_name: default
 subnet_id: 
 instance_name: 
 stack_name: 
-region: 
+region:
 access_key: 
 secreate_key: 
+aminame: 
+elb_name: 
+zones: 
+instance_id: 

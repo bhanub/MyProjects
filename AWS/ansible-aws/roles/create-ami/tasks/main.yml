@@ -1,11 +1,11 @@
 ---
 - include_vars: /root/ansible/vars/main.yml
-
-- ec2_ami:
+- name: creating AMI
+  ec2_ami:
+    wait: yes
     aws_access_key: "{{ access_key }}"
     aws_secret_key: "{{ secreate_key }}"
     region: "{{ region }}"
     instance_id: "{{ instance_id }}"
-    wait: yes
-    name: jetty_newtest
+    name: "{{ aminame }}"
   register: image

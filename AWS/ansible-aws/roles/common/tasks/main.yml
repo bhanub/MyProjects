@@ -1,7 +1,9 @@
 ---
     - name: Reach all nodes
       action: ping
-
+    - name: Installing Java
+      shell: sudo apt-get update
+      sudo: yes
     - name: Installing Java
       shell: sudo apt-get install openjdk-7-jdk -y
       sudo: yes

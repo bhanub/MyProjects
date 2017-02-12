@@ -9,8 +9,16 @@
     - role: aws-launch-instance
 
 - hosts: launched
-
   roles: 
     - role: common
     - role: jetty
+
+- hosts: localhost
+  connection: local
+  gather_facts: True
+  vars:
+  vars_files:
+    - ["vars/main.yml"]
+  roles:
     - role: create-ami
+    - role: create-elb
