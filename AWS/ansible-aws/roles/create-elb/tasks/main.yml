@@ -12,7 +12,7 @@
     listeners:
       - protocol: http
         load_balancer_port: 80
-        instance_port: 80
+        instance_port: 8080
     health_check:
       ping_protocol: http
       ping_port: 80
@@ -22,3 +22,15 @@
       unhealthy_threshold: 6
       healthy_threshold: 2
   register: elb_result
+- debug: var=elb_result
+- debug: var=elb_result.elb.dns_name
+- debug: var=elb_result.elb.name
+
+#- name: Instance Register
+ # local_action:
+  #  module: ec2_elb
+   # instance_id: "{{ instance_id }}"
+   # ec2_elbs: "{{ item }}"
+   # state: present
+  #with_items: "{{ elb_result.elb }}"
+

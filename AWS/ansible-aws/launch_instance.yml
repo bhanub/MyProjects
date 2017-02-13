@@ -8,7 +8,7 @@
   roles:
     - role: aws-launch-instance
 
-- hosts: launched
+- hosts: LaunchedNode
   roles: 
     - role: common
     - role: jetty
@@ -21,4 +21,6 @@
     - ["vars/main.yml"]
   roles:
     - role: create-ami
-    - role: create-elb
+    - role: create-application-elb
+    - role: launch-configuration
+    - role: create-cli-autoscaling 

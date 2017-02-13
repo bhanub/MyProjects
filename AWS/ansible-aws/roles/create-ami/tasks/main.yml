@@ -8,4 +8,11 @@
     region: "{{ region }}"
     instance_id: "{{ instance_id }}"
     name: "{{ aminame }}"
-  register: image
+  register: ami
+- debug: var=ami
+- debug: var=ami.image_id
+- name: insert/update instance_id to vars
+  lineinfile:
+    dest: ./vars/main.yml
+    regexp: '^customami_id:'
+    line: 'customami_id: {{ ami.image_id }}'

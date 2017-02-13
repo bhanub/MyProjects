@@ -13,3 +13,6 @@
     - name: Installing Boto
       shell: sudo apt-get install python-boto -y
       sudo: yes
+    - name: install codedeploy agent
+      sudo: yes
+      action: aws_codedeploy enabled=true
