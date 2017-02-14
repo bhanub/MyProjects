@@ -1,7 +1,7 @@
 ---
-key_pair: 
-instance_size: 
-ami_id:  #Ubuntu 14.04
+key_pair: demo
+instance_size: t2.micro
+ami_id: ami-30e65350 #Ubuntu 14.04
 sg_name: default
 subnet_id: 
 instance_name: testing
@@ -9,10 +9,11 @@ stack_name: Ansible
 region: us-west-2
 access_key: 
 secreate_key: 
-aminame: jbosstest14
-elb_name: myfirstelb
-launch_configuration_name: testlaunch
-zones: 
+aminame: 
+elb_name:
+launch_configuration_name: 
+zones: ['us-west-2a', 'us-west-2b']
+availability_zones: us-west-2a us-west-2b us-west-2c
 subnets: 
 vpc_identifier: 
 elb_security_group: 
@@ -24,7 +25,7 @@ volumes:
     device_type: gp2
     volume_size: 20
     delete_on_termination: true
-instance_id: 
+instance_id:
 customami_id: 
 autoscaling_group_name: testing
 desired_capacity: 1
@@ -33,3 +34,6 @@ max_size: 2
 instance_arn: 
 elb_arn: 
 target_group_arn: 
+codedeploy_application_name: 
+deployment_group: testdeploygroup
+serivce_role_arn: 
